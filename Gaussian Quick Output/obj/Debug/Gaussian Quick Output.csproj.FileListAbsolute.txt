@@ -1,0 +1,49 @@
+c:\users\uthma\onedrive\documents\visual studio 2017\Projects\Gaussian Quick Output\Gaussian Quick Output\bin\Debug\Gaussian Quick Output.exe.config
+c:\users\uthma\onedrive\documents\visual studio 2017\Projects\Gaussian Quick Output\Gaussian Quick Output\bin\Debug\Gaussian Quick Output.exe
+c:\users\uthma\onedrive\documents\visual studio 2017\Projects\Gaussian Quick Output\Gaussian Quick Output\bin\Debug\Gaussian Quick Output.pdb
+c:\users\uthma\onedrive\documents\visual studio 2017\Projects\Gaussian Quick Output\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.csprojResolveAssemblyReference.cache
+c:\users\uthma\onedrive\documents\visual studio 2017\Projects\Gaussian Quick Output\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form1.resources
+c:\users\uthma\onedrive\documents\visual studio 2017\Projects\Gaussian Quick Output\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Properties.Resources.resources
+c:\users\uthma\onedrive\documents\visual studio 2017\Projects\Gaussian Quick Output\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.csproj.GenerateResource.Cache
+c:\users\uthma\onedrive\documents\visual studio 2017\Projects\Gaussian Quick Output\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.exe
+c:\users\uthma\onedrive\documents\visual studio 2017\Projects\Gaussian Quick Output\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.pdb
+C:\Users\Uthma\OneDrive\Documents\Visual Studio 2017\Projects\Gaussian Quick Output\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form2.resources
+C:\Users\Uthma\OneDrive\Documents\Visual Studio 2017\Projects\Gaussian Quick Output\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form3.resources
+C:\Users\Uthma\OneDrive\Documents\Visual Studio 2017\Projects\Gaussian Quick Output\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form4.resources
+C:\Users\Uthma\OneDrive\Documents\Visual Studio 2017\Projects\Gaussian Quick Output\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form5.resources
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\bin\Debug\Gaussian Quick Output.exe.config
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\bin\Debug\Gaussian Quick Output.exe
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\bin\Debug\Gaussian Quick Output.pdb
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.csprojResolveAssemblyReference.cache
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form1.resources
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form2.resources
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form3.resources
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form4.resources
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form5.resources
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form6.resources
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Properties.Resources.resources
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.csproj.GenerateResource.Cache
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.exe
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.pdb
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\bin\Debug\Newtonsoft.Json.Schema.dll
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Uthma\Source\Repos\Gaussian-Quick-Output\Gaussian Quick Output\bin\Debug\Newtonsoft.Json.Schema.xml
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\bin\Debug\Gaussian Quick Output.exe.config
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\bin\Debug\Gaussian Quick Output.exe
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\bin\Debug\Gaussian Quick Output.pdb
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\bin\Debug\Newtonsoft.Json.Schema.dll
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\bin\Debug\Newtonsoft.Json.Schema.xml
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.csprojResolveAssemblyReference.cache
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form1.resources
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form2.resources
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form3.resources
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form4.resources
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form5.resources
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Form6.resources
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussian_Quick_Output.Properties.Resources.resources
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.csproj.GenerateResource.Cache
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.exe
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.pdb
