@@ -356,19 +356,19 @@ namespace Gaussian_Quick_Output
         }
         private void updateBindings()
         {
-            //bindingSource.DataSource = null;
-            //bindingSource.DataSource = customFunctions.FunctionList;
-            //checkedListBox1.DataSource = null;
-            //checkedListBox1.DataSource = bindingSource.DataSource;
-            //comboBox1.DataSource = null;
-            //comboBox1.DataSource = bindingSource.DataSource;
+            bindingSource.DataSource = null;
+            bindingSource.DataSource = customFunctions.FunctionList;
+            checkedListBox1.DataSource = null;
+            checkedListBox1.DataSource = bindingSource.DataSource;
+            comboBox1.DataSource = null;
+            comboBox1.DataSource = bindingSource.DataSource;
 
 
-            //comboBox1.DisplayMember = "Name";
-            //comboBox1.ValueMember = "Name";
-            //checkedListBox1.DataSource = bindingSource.DataSource;
-            //checkedListBox1.DisplayMember = "Name";
-            //checkedListBox1.ValueMember = "Name";
+            comboBox1.DisplayMember = "Name";
+            comboBox1.ValueMember = "Name";
+            checkedListBox1.DataSource = bindingSource.DataSource;
+            checkedListBox1.DisplayMember = "Name";
+            checkedListBox1.ValueMember = "Name";
 
         }
 
