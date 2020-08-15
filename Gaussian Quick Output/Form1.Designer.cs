@@ -208,28 +208,28 @@
             // newAutomationToolStripMenuItem
             // 
             this.newAutomationToolStripMenuItem.Name = "newAutomationToolStripMenuItem";
-            this.newAutomationToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
-            this.newAutomationToolStripMenuItem.Text = "New Automation";
+            this.newAutomationToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.newAutomationToolStripMenuItem.Text = "New Recipe";
             this.newAutomationToolStripMenuItem.Click += new System.EventHandler(this.newAutomationToolStripMenuItem_Click);
             // 
             // openAutomationToolStripMenuItem
             // 
             this.openAutomationToolStripMenuItem.Name = "openAutomationToolStripMenuItem";
-            this.openAutomationToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
-            this.openAutomationToolStripMenuItem.Text = "Open Automation";
+            this.openAutomationToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.openAutomationToolStripMenuItem.Text = "Open Recipe";
             this.openAutomationToolStripMenuItem.Click += new System.EventHandler(this.openAutomationToolStripMenuItem_Click);
             // 
             // saveResultsToolStripMenuItem
             // 
             this.saveResultsToolStripMenuItem.Name = "saveResultsToolStripMenuItem";
-            this.saveResultsToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.saveResultsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.saveResultsToolStripMenuItem.Text = "Save Dataset";
             this.saveResultsToolStripMenuItem.Click += new System.EventHandler(this.saveResultsToolStripMenuItem_Click);
             // 
             // preferencesToolStripMenuItem
             // 
             this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.preferencesToolStripMenuItem.Text = "Preferences";
             this.preferencesToolStripMenuItem.Click += new System.EventHandler(this.preferencesToolStripMenuItem_Click);
             // 
@@ -245,15 +245,15 @@
             // findAndReplaceToolStripMenuItem
             // 
             this.findAndReplaceToolStripMenuItem.Name = "findAndReplaceToolStripMenuItem";
-            this.findAndReplaceToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
+            this.findAndReplaceToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.findAndReplaceToolStripMenuItem.Text = "Find and Replace";
             this.findAndReplaceToolStripMenuItem.Click += new System.EventHandler(this.findAndReplaceToolStripMenuItem_Click);
             // 
             // editAutomationTemplateToolStripMenuItem
             // 
             this.editAutomationTemplateToolStripMenuItem.Name = "editAutomationTemplateToolStripMenuItem";
-            this.editAutomationTemplateToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
-            this.editAutomationTemplateToolStripMenuItem.Text = "Edit Automation Template";
+            this.editAutomationTemplateToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.editAutomationTemplateToolStripMenuItem.Text = "Edit Recipe";
             this.editAutomationTemplateToolStripMenuItem.Click += new System.EventHandler(this.editAutomationTemplateToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
@@ -289,7 +289,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Quick Output Tool";
+            this.Text = "Gourmet Output ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);

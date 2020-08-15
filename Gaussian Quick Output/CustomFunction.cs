@@ -263,7 +263,7 @@ namespace Gaussian_Quick_Output
             {
                 if (file.IndexOf(SearchTerm) == -1)
                 {
-                    return "Null";
+                    return "N/A";
                 }
 
                 else
@@ -271,14 +271,12 @@ namespace Gaussian_Quick_Output
                     return file.Substring(file.IndexOf(SearchTerm) + CharsAfter, OutputChars);
                 }
             }
-            catch (IndexOutOfRangeException)
+            catch (Exception e)
             {
-                return "Out of Range";
+                return "N/A";
             }
-            catch (ArgumentNullException)
-            {
-                return "Argument Null";
-            }
+            
+          
         }
     }
 }
