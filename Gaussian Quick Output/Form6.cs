@@ -53,10 +53,6 @@ namespace Gaussian_Quick_Output
 
                 SessionTemplate = (CustomFunctions)ser.Deserialize(rdr);
 
-                foreach (CustomFunction f in SessionTemplate.FunctionList)
-                {
-                    MessageBox.Show(f.ReadFunction("sadfadfasdfasdfasdfsdaf Enthalpies afasdfasdfasdfasdf adsfasdfsdafasdfsadfasdfasdfsdaf"));
-                }
 
             }
         }
@@ -104,10 +100,18 @@ namespace Gaussian_Quick_Output
             //   string searchTerm = "efdsgsfd"; int charsAfter = 6; int outputChars = 3;
             // AbsoluteSearchFunction f = new AbsoluteSearchFunction(name, searchTerm, charsAfter, outputChars);
             //  f.Build();
-
-            System.Reflection.MethodInfo meth = typeof(AbsoluteSearchFunction).GetMethod("Create");
-            SessionTemplate.FunctionList.Add(CustomFunction.Build(meth));
-            UpdateTemplate();
+            if (comboBox1.Text == "Search and return a related value")
+            {
+                System.Reflection.MethodInfo meth = typeof(AbsoluteSearchFunction).GetMethod("Create");
+                SessionTemplate.FunctionList.Add(CustomFunction.Build(meth));
+                UpdateTemplate();
+            }
+            if (comboBox1.Text == "Count number of times a search term occurs")
+            {
+                System.Reflection.MethodInfo meth = typeof(StringOccurenceFunction).GetMethod("Create");
+                SessionTemplate.FunctionList.Add(CustomFunction.Build(meth));
+                UpdateTemplate();
+            }
             //listBox1.SelectedIndex = 0;
            // MessageBox.Show(listBox1.SelectedItem.GetType().ToString());
 

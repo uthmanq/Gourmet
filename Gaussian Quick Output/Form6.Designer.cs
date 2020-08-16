@@ -103,9 +103,12 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(137, 187);
+            this.comboBox1.Items.AddRange(new object[] {
+            "Search and return a related value",
+            "Count number of times a search term occurs"});
+            this.comboBox1.Location = new System.Drawing.Point(12, 210);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(249, 24);
             this.comboBox1.TabIndex = 6;
             // 
             // button3

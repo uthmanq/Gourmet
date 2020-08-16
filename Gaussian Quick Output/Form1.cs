@@ -14,30 +14,20 @@ namespace Gaussian_Quick_Output
 {
     public partial class Form1 : Form
     {
+        public CustomFunctions customFunctions;
+        BindingSource bindingSource;
+        public static string dataset = "";
+        public static DataTable valueTable = new DataTable();
+        public static string fullreport = "";
+        public static List<string> fileList = new List<string>();
+
         public Form1()
         {
             InitializeComponent();
             customFunctions = new CustomFunctions();
             bindingSource = new BindingSource();
             bindingSource.DataSource = customFunctions.FunctionList;
-            //customFunctions.FunctionList.Add(AbsoluteSearchFunction.Create("Enthalpies", "Enthalpies", 43, 431));
-            //customFunctions.FunctionList.Add(StringOccurenceFunction.Create("Item", "Item"));
-            //comboBox1.DataSource = bindingSource.DataSource;
-            // comboBox1.DisplayMember = "Name";
-            // comboBox1.ValueMember = "Name";
-            //checkedListBox1.DataSource = bindingSource.DataSource;
-            //checkedListBox1.DisplayMember = "Name";
-            //checkedListBox1.ValueMember = "Name";
-
-
         }
-        public CustomFunctions customFunctions;
-        BindingSource bindingSource;
-
-        public static string dataset = "";
-        public static DataTable valueTable = new DataTable();
-        public static string fullreport = "";
-        public static List<string> fileList = new List<string>();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -57,7 +47,7 @@ namespace Gaussian_Quick_Output
 
         }
 
-        public void processData()
+        public void processData(IProgress<int> progress)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("File Name");
@@ -65,17 +55,21 @@ namespace Gaussian_Quick_Output
             {
                 dt.Columns.Add(c.Name);
             }
-            foreach (string filepath in listBox1.Items)
+            int i = 0;
+            foreach (string filepath in fileList)
             {
                 string file = System.IO.File.ReadAllText(filepath);
                 List<String> row = new List<string>();
-               string fpath = filepath.Substring(filepath.LastIndexOf(@"\") + 1);
+                string fpath = filepath.Substring(filepath.LastIndexOf(@"\") + 1);
                 row.Add(fpath);
                 foreach (CustomFunction c in customFunctions.FunctionList)
                 {
                     row.Add(c.ReadFunction(file));
                 }
                 dt.Rows.Add(row.ToArray());
+                i++;
+                var percentComplete = (i * 100) / fileList.Count;
+                progress.Report(percentComplete);
             }
             valueTable = null;
             valueTable = dt;
@@ -131,9 +125,17 @@ namespace Gaussian_Quick_Output
 
         //Method saves everything by processing the data and opening up file system dialog. 
         //Can be expanded upon in the future in case further customization is needed, but right now this is perfectly fine
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {
-            processData();
+            progressBar1.Visible = true;
+            var progress = new Progress<int>(value =>
+            {
+                progressBar1.Value = value;
+
+
+            });
+            await Task.Run(() => processData(progress));
+            progressBar1.Visible = false;
 
             var lines = new List<string>();
             string[] columnNames = valueTable.Columns
@@ -177,11 +179,17 @@ namespace Gaussian_Quick_Output
                     er.ToString();
                 }
                 XmlSerializer ser = new XmlSerializer(typeof(CustomFunctions), new Type[] { typeof(AbsoluteSearchFunction), typeof(StringOccurenceFunction) });
+                try
+                {
+                    StreamReader rdr = new StreamReader(filePath);
+                    customFunctions = (CustomFunctions)ser.Deserialize(rdr);
+                    updateBindings();
+                }
+                catch (System.IO.FileNotFoundException er)
+                {
 
-                StreamReader rdr = new StreamReader(filePath);
+                }
 
-                customFunctions = (CustomFunctions)ser.Deserialize(rdr);
-                updateBindings();
             }
 
             dataset = "";
@@ -201,9 +209,17 @@ namespace Gaussian_Quick_Output
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private async void button3_Click(object sender, EventArgs e)
         {
-            processData();
+            progressBar1.Visible = true;
+            var progress = new Progress<int>(value =>
+            {
+             progressBar1.Value = value;
+                               
+
+            });
+            await Task.Run(() => processData(progress));
+            progressBar1.Visible = false;
             Form2 form = new Form2();
             form.Show();
         }
@@ -284,9 +300,17 @@ namespace Gaussian_Quick_Output
             form.Show();
         }
 
-        private void saveResultsToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void saveResultsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            processData();
+            progressBar1.Visible = true;
+            var progress = new Progress<int>(value =>
+            {
+                progressBar1.Value = value;
+
+
+            });
+            await Task.Run(() => processData(progress));
+            progressBar1.Visible = false;
 
             var lines = new List<string>();
             string[] columnNames = valueTable.Columns
@@ -312,7 +336,7 @@ namespace Gaussian_Quick_Output
 
         private void viewDatasetInGridToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            processData();
+
             Form2 form = new Form2();
             form.Show();
         }
@@ -330,13 +354,20 @@ namespace Gaussian_Quick_Output
                 //Read the contents of the file into a stream
                 var fileStream = openFileDialog1.OpenFile();
                 XmlSerializer ser = new XmlSerializer(typeof(CustomFunctions), new Type[] { typeof(AbsoluteSearchFunction), typeof(StringOccurenceFunction) });
+                try
+                {
+                    StreamReader rdr = new StreamReader(filePath);
+                    customFunctions = (CustomFunctions)ser.Deserialize(rdr);
 
-                StreamReader rdr = new StreamReader(filePath);
 
-                customFunctions = (CustomFunctions)ser.Deserialize(rdr);
+                    updateBindings();
+                }
+                catch (Exception er)
+                {
+                    er.ToString();
+                }
 
 
-                updateBindings();
             }
         }
         private void updateBindings()

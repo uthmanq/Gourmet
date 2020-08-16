@@ -24,7 +24,7 @@ namespace Gaussian_Quick_Output
             if (dt.Rows.Count>0)
             {
                 dataGridView1.DataSource = dt;
-            }
+           }
         }
     }
 }
