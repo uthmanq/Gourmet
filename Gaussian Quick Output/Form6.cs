@@ -124,10 +124,10 @@ namespace Gaussian_Quick_Output
          //   if (listBox1.SelectedIndex != -1)
          //   {
          //       for (int i = 0; i < listBox1.SelectedItem.GetType().GetMethod("Create").GetParameters().Length; i++)
-                {
+           //     {
                 //    comboBox1.Items.Add(listBox1.SelectedItem.GetType().GetMethod("Create").GetParameters()[i].Name);
-          //      }
-          //  }
+          //   }
+         //  }
 
         }
 
