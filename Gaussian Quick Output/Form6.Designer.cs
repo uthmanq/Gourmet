@@ -105,7 +105,8 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Search and return a related value",
-            "Count number of times a search term occurs"});
+            "Count number of times a search term occurs",
+            "Find and Replace"});
             this.comboBox1.Location = new System.Drawing.Point(12, 210);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(249, 24);

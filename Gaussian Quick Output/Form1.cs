@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
+using Xceed.Document.NET;
 
 namespace Gaussian_Quick_Output
 {
@@ -38,11 +39,38 @@ namespace Gaussian_Quick_Output
         //Some data validation would be nice, but not completely necessary
         public void dataLookup()
         {
-            if (listBox1.SelectedIndex != -1)
+            if (listBox1.SelectedIndex != -1 && comboBox1.SelectedIndex != -1)
             {
-                string file = System.IO.File.ReadAllText(listBox1.Text);
-                CustomFunction c = (CustomFunction)comboBox1.SelectedItem;
-                textBox1.Text = c.ReadFunction(file);
+
+                try
+                {
+                    //Adding support for microsoft word
+                    if (listBox1.Text.EndsWith(".docx"))
+                    {
+                        using (var document = Xceed.Words.NET.DocX.Load(listBox1.Text))
+                        {
+                            string file = document.Text;
+                            CustomFunction c = (CustomFunction)comboBox1.SelectedItem;
+                            textBox1.Text = c.ReadFunction(file);
+                        }
+                    }
+                    else
+                    {
+                        string file = System.IO.File.ReadAllText(listBox1.Text);
+                        CustomFunction c = (CustomFunction)comboBox1.SelectedItem;
+                        textBox1.Text = c.ReadFunction(file);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+
+            }
+            else
+            {
+                textBox1.Text = "File not found";
             }
 
         }
@@ -185,9 +213,10 @@ namespace Gaussian_Quick_Output
                     customFunctions = (CustomFunctions)ser.Deserialize(rdr);
                     updateBindings();
                 }
-                catch (System.IO.FileNotFoundException er)
-                {
 
+                catch (Exception er)
+                {
+                    MessageBox.Show(er.Message);
                 }
 
             }
@@ -214,8 +243,8 @@ namespace Gaussian_Quick_Output
             progressBar1.Visible = true;
             var progress = new Progress<int>(value =>
             {
-             progressBar1.Value = value;
-                               
+                progressBar1.Value = value;
+
 
             });
             await Task.Run(() => processData(progress));
@@ -282,6 +311,7 @@ namespace Gaussian_Quick_Output
             if (form.ShowDialog() == DialogResult.OK)
             {
                 customFunctions = form.SessionTemplate;
+                updateBindings();
             }
         }
 
@@ -291,7 +321,9 @@ namespace Gaussian_Quick_Output
             if (form.ShowDialog() == DialogResult.OK)
             {
                 customFunctions = form.SessionTemplate;
+                updateBindings();
             }
+
         }
 
         private void findAndReplaceToolStripMenuItem_Click(object sender, EventArgs e)

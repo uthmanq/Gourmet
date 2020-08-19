@@ -59,35 +59,30 @@ namespace Gaussian_Quick_Output
         public void UpdateTemplate()
         {
             listBox1.Items.Clear();
-            foreach (CustomFunction c in SessionTemplate.FunctionList)
+            if (SessionTemplate.FunctionList.Count > 0)
             {
-
-                listBox1.Items.Add(c);
-                listBox1.DisplayMember = "name";
+                foreach (CustomFunction c in SessionTemplate.FunctionList)
+                {
+                    if (c != null)
+                    {
+                        listBox1.Items.Add(c);
+                    }
+                    listBox1.DisplayMember = "name";
+                }
             }
 
 
-        }
-        public void makeList()
-        {
-            AbsoluteSearchFunction cf = new AbsoluteSearchFunction("Enthalpies", "Enthalpies", 2, 12);
-            AbsoluteSearchFunction cpr = new AbsoluteSearchFunction("s", "s", 10, 12);
-            StringOccurenceFunction cpwerq = new StringOccurenceFunction("s", "s");
-            SessionTemplate.FunctionList.Add(cf);
-            SessionTemplate.FunctionList.Add(cpr);
-            SessionTemplate.FunctionList.Add(cpwerq);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                XmlSerializer ser = new XmlSerializer(typeof(CustomFunctions), new Type[] { typeof(AbsoluteSearchFunction), typeof(StringOccurenceFunction) });
+                XmlSerializer ser = new XmlSerializer(typeof(CustomFunctions), new Type[] { typeof(AbsoluteSearchFunction), typeof(StringOccurenceFunction), typeof(FindAndReplaceFunction) });
                 using (FileStream fs = new FileStream(saveFileDialog1.FileName, FileMode.Create))
                 {
                     ser.Serialize(fs, SessionTemplate);
                 }
-                
             }
 
         }
@@ -112,8 +107,14 @@ namespace Gaussian_Quick_Output
                 SessionTemplate.FunctionList.Add(CustomFunction.Build(meth));
                 UpdateTemplate();
             }
+            if (comboBox1.Text == "Find and Replace")
+            {
+                System.Reflection.MethodInfo meth = typeof(FindAndReplaceFunction).GetMethod("Create");
+                SessionTemplate.FunctionList.Add(CustomFunction.Build(meth));
+                UpdateTemplate();
+            }
             //listBox1.SelectedIndex = 0;
-           // MessageBox.Show(listBox1.SelectedItem.GetType().ToString());
+            // MessageBox.Show(listBox1.SelectedItem.GetType().ToString());
 
         }
 
@@ -124,7 +125,7 @@ namespace Gaussian_Quick_Output
             {
                 for (int i = 0; i < listBox1.SelectedItem.GetType().GetMethod("Create").GetParameters().Length; i++)
                 {
-                    comboBox1.Items.Add(listBox1.SelectedItem.GetType().GetMethod("Create").GetParameters()[i].Name);
+                //    comboBox1.Items.Add(listBox1.SelectedItem.GetType().GetMethod("Create").GetParameters()[i].Name);
                 }
             }
 
@@ -132,7 +133,7 @@ namespace Gaussian_Quick_Output
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(listBox1.SelectedIndex!= -1)
+            if (listBox1.SelectedIndex != -1)
             {
                 SessionTemplate.FunctionList.Remove((CustomFunction)listBox1.SelectedItem);
                 listBox1.Items.Remove(listBox1.SelectedItem);

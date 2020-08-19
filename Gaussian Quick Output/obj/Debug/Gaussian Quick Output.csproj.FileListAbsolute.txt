@@ -47,3 +47,5 @@ C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussi
 C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.csproj.GenerateResource.Cache
 C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.exe
 C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\obj\Debug\Gaussian Quick Output.pdb
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\bin\Debug\Xceed.Document.NET.dll
+C:\Users\Uthma\OneDrive\Documents\Gourmet\Gaussian Quick Output\bin\Debug\Xceed.Words.NET.dll

@@ -126,14 +126,6 @@
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "File Name",
-            "Enthalpies",
-            "Entropies",
-            "Free Energy",
-            "Frequencies",
-            "Item Convergence",
-            "Image"});
             this.comboBox1.Location = new System.Drawing.Point(16, 314);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(133, 24);
@@ -210,28 +202,28 @@
             // newAutomationToolStripMenuItem
             // 
             this.newAutomationToolStripMenuItem.Name = "newAutomationToolStripMenuItem";
-            this.newAutomationToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.newAutomationToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.newAutomationToolStripMenuItem.Text = "New Recipe";
             this.newAutomationToolStripMenuItem.Click += new System.EventHandler(this.newAutomationToolStripMenuItem_Click);
             // 
             // openAutomationToolStripMenuItem
             // 
             this.openAutomationToolStripMenuItem.Name = "openAutomationToolStripMenuItem";
-            this.openAutomationToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.openAutomationToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.openAutomationToolStripMenuItem.Text = "Open Recipe";
             this.openAutomationToolStripMenuItem.Click += new System.EventHandler(this.openAutomationToolStripMenuItem_Click);
             // 
             // saveResultsToolStripMenuItem
             // 
             this.saveResultsToolStripMenuItem.Name = "saveResultsToolStripMenuItem";
-            this.saveResultsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.saveResultsToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.saveResultsToolStripMenuItem.Text = "Save Dataset";
             this.saveResultsToolStripMenuItem.Click += new System.EventHandler(this.saveResultsToolStripMenuItem_Click);
             // 
             // preferencesToolStripMenuItem
             // 
             this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.preferencesToolStripMenuItem.Text = "Preferences";
             this.preferencesToolStripMenuItem.Click += new System.EventHandler(this.preferencesToolStripMenuItem_Click);
             // 

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace Gaussian_Quick_Output
 {
+   
     [XmlRoot]
     public class CustomFunctions : INotifyPropertyChanged
     {
@@ -49,17 +50,19 @@ namespace Gaussian_Quick_Output
         }
     }
     
-    public class CustomFunction
+    public abstract class CustomFunction
     {
-        public CustomFunction()
-        {
-
-        }
+        
         public string Name { get; set; }
         public virtual string ReadFunction(string file)
         {
             return "";
         }
+        public virtual void DoFunction(string filename)
+        {
+
+        }
+
         public static CustomFunction Build(System.Reflection.MethodInfo method)
         {
             int yPos = 0;
@@ -212,40 +215,6 @@ namespace Gaussian_Quick_Output
             
             return c;
         }
-        private Form7 form = new Form7();
-        private TextBox nameTBox = new TextBox();
-        private TextBox searchTermTBox = new TextBox();
-        private TextBox charsAfterTBox = new TextBox();
-        private TextBox outputCharsTBox = new TextBox();
-        private Button submitButton = new Button();
-
-         
-
-        private List<Control> controlList;
-        public void Build()
-        {
-            controlList = new List<Control>(new Control[] { nameTBox, searchTermTBox, charsAfterTBox, outputCharsTBox, submitButton});
-            int p = 5;
-            submitButton.DialogResult = DialogResult.OK;
-            foreach (Control c in controlList)
-            {
-                p += 30;
-                form.Controls.Add(c);
-                c.Location = new System.Drawing.Point(3,p);
-                Label name = new Label();
-                form.Controls.Add(name);
-                name.Location = new System.Drawing.Point(80, p);
-                name.Text = nameof(c);
-                c.Show();
-            }
-            
-            charsAfterTBox.KeyPress += new KeyPressEventHandler(sanitizeInput);
-            outputCharsTBox.KeyPress += new KeyPressEventHandler(sanitizeInput);
-            if (form.ShowDialog() == DialogResult.OK)
-                {
-                MessageBox.Show("OK");
-            }
-        }
         private void sanitizeInput(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == (char)Keys.Back) //The  character represents a backspace
@@ -278,6 +247,46 @@ namespace Gaussian_Quick_Output
             
           
         }
+    }
+    public class FindAndReplaceFunction : CustomFunction
+    {
+        private FindAndReplaceFunction()
+        {
+
+        }
+        public string Find { get; set; }
+        public string Replace { get; set; }
+
+        public FindAndReplaceFunction(string name, string find, string replace)
+        {
+            Name = name;
+            Find = find;
+            Replace = replace;
+        }
+        public static FindAndReplaceFunction Create (string name, string find, string replace)
+        {
+            FindAndReplaceFunction fr = new FindAndReplaceFunction(name, find, replace);
+            return fr;
+        }
+        public override string ReadFunction(string file)
+        {
+            StringOccurenceFunction c = new StringOccurenceFunction("temp", Find);
+            return "Found " + c.ReadFunction(file)+  " items to replace";
+        }
+        public override void DoFunction(string filename)
+        {
+            string filetext = System.IO.File.ReadAllText(filename);
+            filetext = filetext.Replace(Find, Replace);
+            try
+            {
+                System.IO.File.WriteAllText(filename, filetext);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
     }
 }
 
